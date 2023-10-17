@@ -21,6 +21,10 @@ public class DuckSimulator
 {
     public static void main( String[] args )
     {
+        Duck mallard = new MallardDuck();
+        mallard.performQuack();
+        mallard.performFly();
+    
         Duck model = new ModelDuck();
         model.performFly();
         model.performQuack();
@@ -30,6 +34,11 @@ public class DuckSimulator
 }
 
 OUTPUT
+//MallardDuck
+Quack!
+I'm flying with wings
+
+//ModelDuck
 I can't fly
 Quack!
 I'm a flying with a rocket
