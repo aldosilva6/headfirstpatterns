@@ -10,6 +10,9 @@ BEFORE
 
 ![img.png](src/images/img.png)
 
+Take the parts that vary ad encapsulate them, so that later you can alter or extend the parts that vary without affecting
+those that don't
+
 AFTER
 
 ![img_1.png](src/images/img_1.png)
