@@ -6,6 +6,32 @@ Favor composition over inheritance.
 
 With inheritance, you make code duplications, add behavior to classes that doesn't need, more difficult to maintain.
 
+BEFORE
+
+![img.png](src/images/img.png)
+
+AFTER
+
+![img_1.png](src/images/img_1.png)
+
 Change behavior at runtime
 
-![img.png](img.png)
+```
+public class DuckSimulator
+{
+    public static void main( String[] args )
+    {
+        Duck model = new ModelDuck();
+        model.performFly();
+        model.performQuack();
+        model.setFlyBehavior(new FlyRocketPowerd());
+        model.performFly();
+    }
+}
+
+OUTPUT
+I can't fly
+Quack!
+I'm a flying with a rocket
+
+```
