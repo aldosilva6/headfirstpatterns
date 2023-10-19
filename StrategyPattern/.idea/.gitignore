@@ -8,3 +8,15 @@
 /dataSources.local.xml
 # Zeppelin ignored files
 /ZeppelinRemoteNotebooks/
+/sonarlint/issuestore/2/4/2412f492851f7b45707f7a96a3a808e11395ccd2
+/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+/sonarlint/issuestore/6/a/6ad010439a2afefd5317aac1390e0c94784edf7d
+/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+/sonarlint/issuestore/b/3/b3c2564d67495b030ca4d22e803812245537904b
+/sonarlint/issuestore/index.pb
+/sonarlint/securityhotspotstore/2/4/2412f492851f7b45707f7a96a3a808e11395ccd2
+/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+/sonarlint/securityhotspotstore/6/a/6ad010439a2afefd5317aac1390e0c94784edf7d
+/sonarlint/securityhotspotstore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+/sonarlint/securityhotspotstore/b/3/b3c2564d67495b030ca4d22e803812245537904b
+/sonarlint/securityhotspotstore/index.pb
