@@ -1,6 +1,6 @@
-package org.designpattern;
+package org.designpattern.duck;
 
-import org.designpattern.impl.FlyRocketPowerd;
+import org.designpattern.duck.impl.FlyRocketPowerd;
 
 /**
  * Hello world!

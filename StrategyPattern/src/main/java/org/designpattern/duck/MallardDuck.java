@@ -1,7 +1,7 @@
-package org.designpattern;
+package org.designpattern.duck;
 
-import org.designpattern.impl.FlyWithWings;
-import org.designpattern.impl.Quack;
+import org.designpattern.duck.impl.FlyWithWings;
+import org.designpattern.duck.impl.Quack;
 
 /**
  * Created by ainacio on Oct, 2023

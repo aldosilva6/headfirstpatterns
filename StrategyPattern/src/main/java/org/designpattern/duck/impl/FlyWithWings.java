@@ -1,6 +1,6 @@
-package org.designpattern.impl;
+package org.designpattern.duck.impl;
 
-import org.designpattern.FlyBehavior;
+import org.designpattern.duck.FlyBehavior;
 
 /**
  * Created by ainacio on Oct, 2023

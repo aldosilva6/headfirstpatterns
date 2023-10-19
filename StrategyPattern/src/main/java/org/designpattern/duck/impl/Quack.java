@@ -1,6 +1,6 @@
-package org.designpattern.impl;
+package org.designpattern.duck.impl;
 
-import org.designpattern.QuackBehavior;
+import org.designpattern.duck.QuackBehavior;
 
 /**
  * Created by ainacio on Oct, 2023

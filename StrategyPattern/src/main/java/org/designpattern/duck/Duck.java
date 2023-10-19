@@ -1,4 +1,4 @@
-package org.designpattern;
+package org.designpattern.duck;
 
 /**
  * Created by ainacio on Oct, 2023

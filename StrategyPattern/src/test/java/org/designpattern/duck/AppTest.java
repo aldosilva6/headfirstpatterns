@@ -1,4 +1,4 @@
-package org.designpattern;
+package org.designpattern.duck;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
