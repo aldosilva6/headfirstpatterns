@@ -4,7 +4,7 @@ Defines a one-to-many dependency between objects so that when one object changes
 Design Principle: Strive for loosely coupled designs between objects that interact.
 
 We code to concrete implementation, not interfaces. For every new display we'll need to alter the code. We have no way to add(or remove) display
-element at runtime.  We haven't encapsulated the parts that changes. WeatherData class violate encapsulation.
+element at runtime.  We haven't encapsulated the parts that changes.
 
 BEFORE
 
@@ -15,35 +15,37 @@ the subject changes.
 
 AFTER
 
-![img_1.png](src/images/img_1.png)
+![img.png](src/images/img1.png)
 
-Change behavior at runtime
+Subjects update Observers using common interface
+Observer are loosely coupled in that Subject
+You can pull or push data from the Subject - pull is considered more "correct"
 
 ```
-public class DuckSimulator
+public class WeatherStation
 {
     public static void main( String[] args )
     {
-        Duck mallard = new MallardDuck();
-        mallard.performQuack();
-        mallard.performFly();
-    
-        Duck model = new ModelDuck();
-        model.performFly();
-        model.performQuack();
-        model.setFlyBehavior(new FlyRocketPowerd());
-        model.performFly();
+        WeatherData weatherData = new WeatherData();
+        CurrentConditionDisplay currentConditionDisplay = new CurrentConditionDisplay(weatherData);
+        StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
+        ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
+        HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
+
+        weatherData.setMeasurements(80,65,30.4f);
+        weatherData.setMeasurements(82,70,29.2f);
+        weatherData.setMeasurements(78,90,29.2f);
     }
 }
 
 OUTPUT
-//MallardDuck
-Quack!
-I'm flying with wings
-
-//ModelDuck
-I can't fly
-Quack!
-I'm a flying with a rocket
+Current conditions: 80.0F degrees and 65.0% humidity
+Avg/Max/Min temperature = 80.0/80.0/80.0
+Forecast: Improving weather on the way!
+Heat index is 82.95535
+Current conditions: 82.0F degrees and 70.0% humidity
+Avg/Max/Min temperature = 81.0/82.0/80.0
+Forecast: Watch out for cooler, rainy weather
+Heat index is 86.90124
 
 ```
