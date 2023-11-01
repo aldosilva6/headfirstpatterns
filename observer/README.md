@@ -1,7 +1,7 @@
 # Observer Pattern
 Defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.
 
-Favor composition over inheritance.
+Design Principle: Strive for loosely coupled designs between objects that interact.
 
 We code to concrete implementation, not interfaces. For every new display we'll need to alter the code. We have no way to add(or remove) display
 element at runtime.  We haven't encapsulated the parts that changes. WeatherData class violate encapsulation.
