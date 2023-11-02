@@ -12,7 +12,7 @@ BEFORE
 
 ![img.png](src/images/img.png)
 
-Our goal is to allow classes to be easily extended to incorporate new behavior without modifying existing code.
+Our goal is to allow classes to be easily extended to incorporate new behavior without modifying existing code. Compound behaviors if necessary.
 
 AFTER
 
