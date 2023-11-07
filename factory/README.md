@@ -41,6 +41,47 @@ AFTER
 
 Once we have a SimplePizzaFactory, our orderPizza() method becomes a client of that object. Anytime it needs a pizza, it asks the pizza factory to make one.
 
+```
+public class PizzaStore {
+
+     SimplePizzaFactory factory;
+
+    public PizzaStore(SimplePizzaFactory factory) {
+        this.factory = factory;
+    }
+    
+    public Pizza orderPizza(String type){
+        Pizza pizza;
+
+        pizza = factory.createPizza(type);
+
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
+        return pizza;
+    }
+}
+
+public class SimplePizzaFactory {
+
+    public Pizza createPizza(String type){
+        Pizza pizza = null;
+
+        if(type.equals("cheese")){
+            pizza = new CheesePizza();
+        } else if(type.equals("pepperoni")){
+            pizza = new PepperoniPizza();
+        } else if(type.equals("clam")){
+            pizza = new GreekPizza();
+        } else if(type.equals("veggie")){
+            pizza = new VeggiePizza();
+        }
+
+        return pizza;
+    }
+}
+```
 AFTER
 
 A factory method handles object creation and encapsulates it in a subclass. The Factory Method Pattern defines an interface for creating
