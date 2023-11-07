@@ -27,12 +27,10 @@ public abstract class PizzaStoreOld {
         } else {
             pizza = new DefaultPizza();
         }
-
         pizza.prepare();
         pizza.bake();
         pizza.cut();
         pizza.box();
-
 
         return pizza;
     }

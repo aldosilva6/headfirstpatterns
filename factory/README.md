@@ -4,53 +4,83 @@ maintenance.
 
 Design Principle: Dependency Inversion Principle. Depend upon abstraction. Do not depend upon concrete classes.
 
-We code to concrete implementation, not interfaces. For every new display we'll need to alter the code. We have no way to add(or remove) display
-element at runtime.  We haven't encapsulated the parts that changes.
+Identify the aspects that vary and separate them from what stays the same. For each new Pizza you need to change the code and add
+an if or remove one existent, dealing with concrete class is instantiated is really messing up order pizza.
 
 BEFORE
 
 ![img.png](src/images/img.png)
 
-When the state of one object changes, all of its dependents are notified. We have one subject, who notifies many observers when something in
-the subject changes.
+```
+public Pizza orderPizza(String type){
+        Pizza pizza;
+
+        if(type.equals("cheese")){
+            pizza = new CheesePizza();
+        } else if (type.equals("greek")){
+            pizza = new GreekPizza();
+        } else if (type.equals("pepperoni")){
+            pizza = new PepperoniPizza();
+        } else {
+            pizza = new DefaultPizza();
+        }
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
+
+        return pizza;
+    }
+```
+
+What we're going to do is take the creation code and move it out into another object that is only going to be concerned with creating pizza.
 
 AFTER
 
 ![img.png](src/images/img1.png)
 
-Subjects update Observers using common interface
-Observer are loosely coupled in that Subject
-You can pull or push data from the Subject - pull is considered more "correct"
+Once we have a SimplePizzaFactory, our orderPizza() method becomes a client of that object. Anytime it needs a pizza, it asks the pizza factory to make one.
 
 AFTER
 
 A factory method handles object creation and encapsulates it in a subclass. The Factory Method Pattern defines an interface for creating
 an object, but lets subclass decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+
+![img.png](src/images/img2.png)
+
 ```
-public class WeatherStation
+public class PizzaTestDrive 
 {
     public static void main( String[] args )
     {
-        WeatherData weatherData = new WeatherData();
-        CurrentConditionDisplay currentConditionDisplay = new CurrentConditionDisplay(weatherData);
-        StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
-        ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
-        HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
+        PizzaStore nyStore = new NYPizzaStore();
+        PizzaStore chicagoStore = new ChicagoPizzaStore();
 
-        weatherData.setMeasurements(80,65,30.4f);
-        weatherData.setMeasurements(82,70,29.2f);
-        weatherData.setMeasurements(78,90,29.2f);
+        Pizza pizza = nyStore.orderPizza("cheese");
+        System.out.println("Ethan ordered a " + pizza.getName() + "\n");
+
+        pizza = chicagoStore.orderPizza("cheese");
+        System.out.println("Joel ordered a " + pizza.getName() + "\n");
     }
 }
 
-OUTPUT
-Current conditions: 80.0F degrees and 65.0% humidity
-Avg/Max/Min temperature = 80.0/80.0/80.0
-Forecast: Improving weather on the way!
-Heat index is 82.95535
-Current conditions: 82.0F degrees and 70.0% humidity
-Avg/Max/Min temperature = 81.0/82.0/80.0
-Forecast: Watch out for cooler, rainy weather
-Heat index is 86.90124
+Preparing NY Style Sauce and Cheese Pizza
+Tossing dough...
+Adding sauce...
+Adding toppings: 
+ Graed Reggiano Cheese
+Bake for 25 minutes at 350
+Cutting the pizza into diagonal slices
+Place pizza in official PizzaStore box
+Ethan ordered a NY Style Sauce and Cheese Pizza
 
+Preparing Chicago Style Deep Dish Cheese Pizza
+Tossing dough...
+Adding sauce...
+Adding toppings: 
+ Shredded Mozzarella Cheese
+Bake for 25 minutes at 350
+Cutting the pizza into square slices
+Place pizza in official PizzaStore box
+Joel ordered a Chicago Style Deep Dish Cheese Pizza
 ```
