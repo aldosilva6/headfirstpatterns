@@ -12,7 +12,17 @@ BEFORE
 ![img.png](src/images/img.png)
 
 ```
-public Pizza orderPizza(String type){
+public abstract class PizzaStoreOld {
+
+    /**
+     * For each new Pizza this code needs to change.
+     *
+     * Move to a object that is only going to be concerned with creating pizza.
+     *
+     * @param type
+     * @return
+     */
+    public Pizza orderPizza(String type){
         Pizza pizza;
 
         if(type.equals("cheese")){
@@ -31,6 +41,7 @@ public Pizza orderPizza(String type){
 
         return pizza;
     }
+}
 ```
 
 What we're going to do is take the creation code and move it out into another object that is only going to be concerned with creating pizza.
