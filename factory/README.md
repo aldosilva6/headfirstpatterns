@@ -101,6 +101,40 @@ an object, but lets subclass decide which class to instantiate. Factory Method l
 ![img.png](src/images/img2.png)
 
 ```
+
+public abstract class PizzaStore {
+
+    public final Pizza orderPizza(String type){
+        Pizza pizza;
+
+        pizza = createPizza(type);
+
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
+
+        return pizza;
+    }
+
+    protected abstract Pizza createPizza(String type);
+}
+
+public class NYPizzaStore extends PizzaStore {
+    @Override
+    protected Pizza createPizza(String type) {
+        if(type.equals("cheese")){
+            return new NYStyleCheesePizza();
+        } else if (type.equals("veggie")){
+            return new NYStyleVeggiePizza();
+        } else if (type.equals("clam")){
+            return new NYStyleClamPizza();
+        } else if(type.equals("pepperoni")){
+            return new NYStylePepperoniPizza();
+        } else return null;
+    }
+}
+
 public class PizzaTestDrive 
 {
     public static void main( String[] args )
