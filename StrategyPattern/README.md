@@ -5,7 +5,7 @@ independently from clients that use it.
 Favor composition over inheritance.
 
 With inheritance, you make code duplications across subclasses, add behavior to classes that doesn't need, more difficult to maintain,
-runtime behavior changes are difficult, it's hard to gain knowledge of all part behaviors, changes can unintentionally affect other parts.
+runtime behavior changes are difficult, it's hard to gain knowledge of all parto behaviors, changes can unintentionally affect other parts.
 
 BEFORE
 
