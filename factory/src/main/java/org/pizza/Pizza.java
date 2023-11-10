@@ -1,5 +1,7 @@
 package org.pizza;
 
+import org.pizza.ingredient.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,18 +11,16 @@ import java.util.List;
 public abstract class Pizza {
 
     protected String name;
-    protected String dough;
-    protected String sauce;
+    protected Dough dough;
+    protected Sauce sauce;
+    protected Cheese cheese;
+    protected Veggie[] veggies;
+
+    protected Pepperoni pepperoni;
+
+    protected Clams clam;
     protected List<String> toppings = new ArrayList<>();
-    public void prepare(){
-        System.out.println("Preparing " + name);
-        System.out.println("Tossing dough...");
-        System.out.println("Adding sauce...");
-        System.out.println("Adding toppings: ");
-        for(String topping : toppings){
-            System.out.println(" " + topping);
-        }
-    }
+    public abstract void prepare();
 
     public void bake(){
         System.out.println("Bake for 25 minutes at 350");
@@ -36,5 +36,9 @@ public abstract class Pizza {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

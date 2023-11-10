@@ -16,13 +16,13 @@ public class SimplePizzaFactory {
         Pizza pizza = null;
 
         if(type.equals("cheese")){
-            pizza = new CheesePizza();
+            pizza = new CheesePizza(null);
         } else if(type.equals("pepperoni")){
-            pizza = new PepperoniPizza();
+            pizza = new PepperoniPizza(null);
         } else if(type.equals("clam")){
             pizza = new GreekPizza();
         } else if(type.equals("veggie")){
-            pizza = new VeggiePizza();
+            pizza = new VeggiePizza(null);
         }
 
         return pizza;

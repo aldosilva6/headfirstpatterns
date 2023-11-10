@@ -19,11 +19,11 @@ public abstract class PizzaStoreOld {
         Pizza pizza;
 
         if(type.equals("cheese")){
-            pizza = new CheesePizza();
+            pizza = new CheesePizza(null);
         } else if (type.equals("greek")){
             pizza = new GreekPizza();
         } else if (type.equals("pepperoni")){
-            pizza = new PepperoniPizza();
+            pizza = new PepperoniPizza(null);
         } else {
             pizza = new DefaultPizza();
         }

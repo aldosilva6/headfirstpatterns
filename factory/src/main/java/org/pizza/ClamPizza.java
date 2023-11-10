@@ -5,9 +5,11 @@ import org.pizza.ingredient.PizzaIngredientFactory;
 /**
  * Created by ainacio on Nov, 2023
  */
-public class VeggiePizza extends Pizza {
+public class ClamPizza extends Pizza{
+
     PizzaIngredientFactory ingredientFactory;
-    public VeggiePizza(PizzaIngredientFactory ingredientFactory) {
+
+    public ClamPizza(PizzaIngredientFactory ingredientFactory) {
         this.ingredientFactory = ingredientFactory;
     }
 
@@ -17,6 +19,6 @@ public class VeggiePizza extends Pizza {
         dough = ingredientFactory.createDough();
         sauce = ingredientFactory.createSauce();
         cheese = ingredientFactory.createCheese();
-        veggies = ingredientFactory.createVeggies();
+        clam = ingredientFactory.createClam();
     }
 }
