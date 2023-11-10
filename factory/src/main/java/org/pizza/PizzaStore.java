@@ -18,5 +18,11 @@ public abstract class PizzaStore {
         return pizza;
     }
 
+    /**
+     * Provide an abstract interface to create one product
+     *
+     * @param type
+     * @return
+     */
     protected abstract Pizza createPizza(String type);
 }

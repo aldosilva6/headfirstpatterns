@@ -7,6 +7,8 @@ import java.util.List;
 
 /**
  * Created by ainacio on Nov, 2023
+ *
+ * This is the product of PizzaStore
  */
 public abstract class Pizza {
 

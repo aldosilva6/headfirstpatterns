@@ -1,8 +1,16 @@
 # Factory Pattern 
 Encapsulate the code that create objects. By placing creation code in one object or method, avoid duplication and provide one place to perform
-maintenance.
+maintenance. Factory Method and Abstract Factory - both encapsulate object creation and allow you to decouple your code from concrete types.
 
 Design Principle: Dependency Inversion Principle. Depend upon abstraction. Do not depend upon concrete classes.
+
+# Abstract Factory - Relies on Inheritance
+Provides an interface for creating families of related or dependent objects without specifying their concrete class.
+![img.png](src/images/img4.png)
+
+# Factory Method - Relies on Object Composition
+Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to the subclasses.
+![img.png](src/images/img3.png)
 
 Identify the aspects that vary and separate them from what stays the same. For each new Pizza you need to change the code and add
 an if or remove one existent, dealing with concrete class is instantiated is really messing up order pizza.
@@ -170,3 +178,4 @@ Cutting the pizza into square slices
 Place pizza in official PizzaStore box
 Joel ordered a Chicago Style Deep Dish Cheese Pizza
 ```
+

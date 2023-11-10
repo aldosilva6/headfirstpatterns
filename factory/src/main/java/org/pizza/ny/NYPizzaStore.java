@@ -7,6 +7,12 @@ import org.pizza.ingredient.PizzaIngredientFactory;
  * Created by ainacio on Nov, 2023
  */
 public class NYPizzaStore extends PizzaStore {
+    /**
+     * The factory Method
+     *
+     * @param item
+     * @return
+     */
     @Override
     protected Pizza createPizza(String item) {
         Pizza pizza = null;
