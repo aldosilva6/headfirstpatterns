@@ -2,7 +2,6 @@ package org.pizza.chicago;
 
 import org.pizza.*;
 import org.pizza.ingredient.PizzaIngredientFactory;
-import org.pizza.ny.NYPizzaIngredientFactory;
 
 /**
  * Created by ainacio on Nov, 2023
