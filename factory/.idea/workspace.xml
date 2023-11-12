@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8007a0c5-802e-431c-b58c-6c1d9dce3cdd" name="Changes" comment="" />
+    <list default="true" id="8007a0c5-802e-431c-b58c-6c1d9dce3cdd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,11 +16,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -42,7 +51,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/ainacio/Development/headfirstpatterns/factory/src/images",
+    "last_opened_file_path": "/home/ainacio/Encfs/MySecrets/headfirstpatterns/factory",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,6 +69,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.pizza.ingredient" />
+      <recent name="org.pizza.chicago" />
+      <recent name="org.pizza.ny" />
       <recent name="org.pizza.old" />
       <recent name="org.pizza" />
     </key>
@@ -70,11 +82,13 @@
       <recent name="$PROJECT_DIR$/src/images" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.pizza.ingredient" />
       <recent name="org.pizza" />
       <recent name="org.pizza.old" />
       <recent name="org.pizza.ny" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.pizza.chicago" />
       <recent name="org.pizza.simplefactory" />
       <recent name="org.pizza" />
     </key>
@@ -152,7 +166,9 @@
       <option name="presentableId" value="Default" />
       <updated>1699062271214</updated>
       <workItem from="1699062272459" duration="2657000" />
-      <workItem from="1699300648844" duration="14769000" />
+      <workItem from="1699300648844" duration="16270000" />
+      <workItem from="1699573812456" duration="12213000" />
+      <workItem from="1699641713493" duration="2126000" />
     </task>
     <task id="LOCAL-00001" summary="Added another design pattern - Factory">
       <option name="closed" value="true" />
@@ -178,7 +194,63 @@
       <option name="project" value="LOCAL" />
       <updated>1699387604887</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added explanation to method factory">
+      <option name="closed" value="true" />
+      <created>1699387678798</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699387678798</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added explanation to method factory">
+      <option name="closed" value="true" />
+      <created>1699387691388</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699387691388</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added explanation to method factory">
+      <option name="closed" value="true" />
+      <created>1699387827836</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699387827836</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added explanation to method factory">
+      <option name="closed" value="true" />
+      <created>1699578250901</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1699578250901</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added explanation to method factory">
+      <option name="closed" value="true" />
+      <created>1699579253547</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699579253547</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added explanation to abstract factory method">
+      <option name="closed" value="true" />
+      <created>1699619440094</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699619440094</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added explanation to abstract factory method">
+      <option name="closed" value="true" />
+      <created>1699619455323</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699619455323</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +259,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added another design pattern - Factory" />
     <MESSAGE value="Added explanation to method factory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added explanation to method factory" />
+    <MESSAGE value="Added explanation to abstract factory method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added explanation to abstract factory method" />
   </component>
 </project>
