@@ -9,8 +9,14 @@ MacroCommands are a simple extension of the Command Pattern that allow multiple 
 
 Command Pattern:
 
-![img.png](img.png)
+![img.png](src/image/img.png)
 
+How encapsulate method invocation - Object invoking the computation doesn't need to worry about how to do things.
+
+HOME AUTOMATION REMOTE CONTROL - A house needs to automate its products but each product has its implementation and the industry
+has no common interface:
+
+![img.png](src/image/img1.png)
 
 ```
 public static void main( String[] args )
