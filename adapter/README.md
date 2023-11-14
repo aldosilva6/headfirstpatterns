@@ -49,19 +49,21 @@ I'm flying a short distance
 
 ```
 
+Object adapters use composition whilst class adapters use inheritance, this makes the class adapters les adaptive
+since you can't mix the behavior. With composition you can call any subclass of interface.
+
 # Faced Pattern
 It provides a simplified interface to a subsystem while still exposing the full functionality of the system to those who may need it. Facade
 defines a higher-level interface that makes the subsystem easier to use.
 
-Object adapters use composition whilst class adapters use inheritance, this makes the class adapters les adaptive
-since you can't mix the behavior. With composition you can call any subclass of interface.
-
 Decoupled Client from Subsystems.
 
-![img.png](src/image/img1.png)
+![img_1.png](src/image/img_1.png)
 
 Design Principle: Principle of Least Knowledge: talk only to your immediate friends. Close friends.
 
 Decorator: Doesn't alter the interface, but adds responsibility
+
 Adapter: Converts one interface to another
+
 Facade: Makes an interface simpler.
