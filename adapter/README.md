@@ -58,7 +58,7 @@ defines a higher-level interface that makes the subsystem easier to use.
 
 Decoupled Client from Subsystems.
 
-![img_1.png](src/image/img_1.png)
+![img.png](src/image/img1.png)
 
 Design Principle: Principle of Least Knowledge: talk only to your immediate friends. Close friends.
 
