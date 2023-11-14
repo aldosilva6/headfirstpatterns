@@ -58,14 +58,10 @@ since you can't mix the behavior. With composition you can call any subclass of 
 
 Decoupled Client from Subsystems.
 
+![img.png](src/image/img1.png)
+
 Design Principle: Principle of Least Knowledge: talk only to your immediate friends. Close friends.
 
 Decorator: Doesn't alter the interface, but adds responsibility
 Adapter: Converts one interface to another
 Facade: Makes an interface simpler.
-
-3 Classes
-
-Method 2 because create an object from calling a method inside an instance.
-
-Should you care? No, because is not a law.
