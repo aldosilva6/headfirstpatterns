@@ -60,6 +60,50 @@ Decoupled Client from Subsystems.
 
 ![img.png](src/image/img1.png)
 
+
+```
+public static void main(String[] args) {
+    Amplifier amp = new Amplifier("Amplifier");
+    Tuner tuner = new Tuner("AM/FM Tuner", amp);
+    StreamingPlayer player = new StreamingPlayer("Streaming Player", amp);
+    CdPlayer cd = new CdPlayer("CD Player", amp);
+    Projector projector = new Projector("Projector", player);
+    TheaterLights lights = new TheaterLights("Theater Ceiling Lights");
+    Screen screen = new Screen("Theater Screen");
+    PopcornPopper popper = new PopcornPopper("Popcorn Popper");
+
+    HomeTheaterFacade homeTheater = 
+            new HomeTheaterFacade(amp, tuner, player, 
+                    projector, screen, lights, popper);
+
+    homeTheater.watchMovie("Raiders of the Lost Ark");
+    homeTheater.endMovie();
+}
+
+OUTPUT:
+
+Get ready to watch a movie...
+Popcorn Popper on
+Popcorn Popper popping popcorn!
+Theater Ceiling Lights dimming to 10%
+Theater Screen going down
+Projector on
+Projector in widescreen mode (16x9 aspect ratio)
+Amplifier on
+Amplifier setting Streaming player to Streaming Player
+Amplifier surround sound on (5 speakers, 1 subwoofer)
+Amplifier setting volume to 5
+Streaming Player on
+Streaming Player playing "Raiders of the Lost Ark"
+Shutting movie theater down...
+Popcorn Popper off
+Theater Ceiling Lights on
+Theater Screen going up
+Projector off
+Amplifier off
+Streaming Player stopped "Raiders of the Lost Ark"
+Streaming Player off
+```
 Design Principle: Principle of Least Knowledge: talk only to your immediate friends. Close friends.
 
 Decorator: Doesn't alter the interface, but adds responsibility
