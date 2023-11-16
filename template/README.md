@@ -52,10 +52,3 @@ Strategy: Encapsulate interchangeable behavior and use delegation to decide whic
 
 Factory Method: Subclasses decide which concrete classes to instantiate
 
-You can use sort for any kind of object that implements de interface. Is more flexible. If the object doesn't need
-to use the sort method, it doesn't need to implements de Comparable. You can forget to implements de method compareTo
-and discover only when the application is running. Already put the type on method static.
-
-
-Factory Method
-
