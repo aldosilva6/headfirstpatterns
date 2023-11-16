@@ -8,6 +8,8 @@ Hooks: Are methods that do nothing or default behavior in the abstract class, bu
 
 If you want the subclass to change algorithm in the template method, you can declare the template method as final.
 
+The Strategy and Template Method Pattern both encapsulate algorithms, the first by composition and the other by inheritance.
+
 A Starbucks Coffee
 
 ![img.png](src/images/img.png)
