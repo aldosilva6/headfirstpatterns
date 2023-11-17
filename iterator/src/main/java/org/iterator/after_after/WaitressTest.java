@@ -13,6 +13,4 @@ public class WaitressTest {
         waitress.printMenu();
     }
 
-
-
 }
