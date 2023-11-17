@@ -13,9 +13,10 @@ Create a method that implements the same interface Iterator, and iterator from i
 
 AFTER
 
-![img_1.png](src/images/img_1.png)
+![img.png](src/images/img_1.png)
 
 If you want, you can also simplify by using the Iterator interface from Java language:
+
 
 
 
