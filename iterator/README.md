@@ -15,9 +15,10 @@ AFTER
 
 ![img.png](src/images/img_1.png)
 
-If you want, you can also simplify by using the Iterator interface from Java language:
+If you want, you can also simplify by using the Iterator interface from Java language, since List interface already have a method that give an Iterator, you don't need
+the PancakeHouseMenuIterator class:
 
-
+![img.png](src/images/img_2.png)
 
 
 ```
