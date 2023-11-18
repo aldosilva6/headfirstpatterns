@@ -1,7 +1,14 @@
 # Iterator Pattern
-Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+
+This makes a lot of sense: the pattern gives you a way to stp through the elements of an aggregate without having to know how things are
+represented under the covers
 
 Design Principle: A class should have only one reason to change. More than one responsibility means more than one area of change.
+
+**Cohesion** is a term you'll hear used as a measure of how closely a class or a module supports a single purpose or responsibility.  
+High Cohesion = designed around related functions  
+Low Cohesion = designed around unrelated functions  
 
 If you don't have a single interface to aggregate you need to implement two fors to iterate to two different data structures: ArrayList and Array
 
