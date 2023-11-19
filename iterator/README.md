@@ -98,10 +98,10 @@ The tree structure it will be:
 3-) Instantiate CafeMenu into Waitress and pass the cafeMenu to printMenu method();
 
 
-Composite - Clients treat collections of objects and individual objects uniformly
-Iterator - Provides a way to traverse a collection of objects without exposing the collection's implementation
-Facade - Simplifies the interface of a group of classes
-Adapter - Changes the interface of one or more classes
-Observer - Allows a group of objects to be notified when some state changes
-Strategy - Encapsulates interchangeable behaviors and uses delegation to decide which one to use
+Composite - Clients treat collections of objects and individual objects uniformly  
+Iterator - Provides a way to traverse a collection of objects without exposing the collection's implementation  
+Facade - Simplifies the interface of a group of classes  
+Adapter - Changes the interface of one or more classes  
+Observer - Allows a group of objects to be notified when some state changes  
+Strategy - Encapsulates interchangeable behaviors and uses delegation to decide which one to use  
 
