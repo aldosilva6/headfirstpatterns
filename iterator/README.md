@@ -68,3 +68,31 @@ Name:Steamed Veggies and Brown Rice - Description: Steamed vegetables over brown
 Name:Pasta - Description: Spaghetti with Marinara Sauce, and a slice of sourdough bread - Price: 3.89
 
 ```
+
+What if you have submenus, or menus inside menus for case of dessert.
+
+![img.png](src/images/img_3.png)
+
+# Composite Pattern
+Allows you to compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions
+of objects uniformly.
+
+A composite contains components. Components can be composites or leaf. A composite holds a set of children; those children may be other composites
+or leaf elements
+
+![img_1.png](src/images/img_4.png)
+
+Design Menus:
+
+![img_2.png](src/images/img_5.png)
+
+The tree structure it will be:
+
+![img_3.png](src/images/img_6.png)
+
+
+1-) Implements Menu interface to have the method createIterator();
+
+2-) Implements the createIterator to transform a Map into a Iterator
+
+3-) Instantiate CafeMenu into Waitress and pass the cafeMenu to printMenu method();
