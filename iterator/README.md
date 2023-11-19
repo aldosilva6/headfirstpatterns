@@ -82,7 +82,7 @@ or leaf elements
 
 ![img_1.png](src/images/img_4.png)
 
-Design Menus:
+Design Menus - We call the components that contain other components, composite objects, and components that don't contain other components leaf objets.:
 
 ![img_2.png](src/images/img_5.png)
 
