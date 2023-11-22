@@ -9,8 +9,9 @@ public class GumballMachine {
     State noQuarterState;
     State hasQuarterState;
     State soldState;
-
     State winnerState;
+
+    int numberOfGumballs;
 
     State state;
     int count = 0;
@@ -28,19 +29,22 @@ public class GumballMachine {
         } else {
             state = soldOutState;
         }
+        this.numberOfGumballs = numberGumballs;
     }
 
     public void insertQuarter(){
         state.insertQuarter();
     }
 
-    public void ejectQuarter(){
-        state.ejectQuarter();
-    }
-
     public void turnCrank(){
             state.turnCrank();
             state.dispense();
+    }
+
+    public void refill(int count){
+        this.count += count;
+        System.out.println("The gumball machine was just refilled; its new count is: " + this.count);
+        state.refill();
     }
 
     void releaseBall(){
