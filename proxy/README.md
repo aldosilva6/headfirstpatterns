@@ -13,31 +13,55 @@ The Proxy = holds a reference to the real object.
 
 ![img.png](src/images/img.png)
 
-To execute the MyRemote example you first need to run:  
-rmiregistry
-javac *.java
-java MyRemoteImpl  
+## Remote Proxy
+With remote proxy, the proxy acts as a local representative for an object that lives in a different JVM.  
+
+![img.png](src/images/img8.png)  
+
+To execute the MyRemote example you first need to run:    
+rmiregistry  
+javac *.java  
+java MyRemoteImpl    
 And then execute MyRemoteClient.
 
-## Remote Proxy
-With remote proxy, the proxy acts as a local representative for an object that lives in a different JVM.
 ```
-public interface GumballMachineRemote extends Remote {
-    public Integer getCount() throws RemoteException;
-    public String getLocation() throws RemoteException;
-    public State getState() throws RemoteException;
+public interface MyRemote extends Remote {
+    public String sayHello() throws RemoteException;
 }
 
-public static void main(String[] args) {
-    String[] location = {"rmi:///austin.mightygumball.com/gumballmachine",
-                         "rmi:///boulder.mightygumball.com/gumballmachine"};
-    GumballMonitor[] monitor = new GumballMonitor[location.length];
+public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote {
 
-    for(int i = 0; i < location.length; i++){
+    private static final long serialVersionUID = 1L;
+
+    public MyRemoteImpl() throws RemoteException {
+    }
+
+    public static void main(String[] args) {
         try {
-            GumballMachineRemote machine = (GumballMachineRemote) Naming.lookup(location[i]);
-            monitor[i] = new GumballMonitor(machine);
-            System.out.println(monitor[i]);
+            MyRemote service = new MyRemoteImpl();
+            Naming.bind("RemoteHello", service);
+        } catch (RemoteException | AlreadyBoundException | MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public String sayHello() throws RemoteException {
+        return "Server says, 'Hey'";
+    }
+}
+
+public class MyRemoteClient {
+
+    public static void main(String[] args) {
+        new MyRemoteClient().go();
+    }
+
+    private void go() {
+        try {
+            MyRemote service = (MyRemote) Naming.lookup("rmi://127.0.0.1/RemoteHello");
+            String s = service.sayHello();
+            System.out.println(s);
         } catch (NotBoundException e) {
             throw new RuntimeException(e);
         } catch (MalformedURLException e) {
@@ -46,14 +70,8 @@ public static void main(String[] args) {
             throw new RuntimeException(e);
         }
     }
-
-    for(int i = 0; i < location.length; i++){
-        monitor[i].report();
-    }
 }
 ```
-
-![img_1.png](src/images/img_1.png)
 
 ## Virtual Proxy
 The virtual proxy acts as a representative for an object that may be expensive to create. The proxy could show
