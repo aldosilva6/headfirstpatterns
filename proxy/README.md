@@ -21,18 +21,78 @@ And then execute MyRemoteClient.
 
 ## Remote Proxy
 With remote proxy, the proxy acts as a local representative for an object that lives in a different JVM.
+```
+public interface GumballMachineRemote extends Remote {
+    public Integer getCount() throws RemoteException;
+    public String getLocation() throws RemoteException;
+    public State getState() throws RemoteException;
+}
+
+public static void main(String[] args) {
+    String[] location = {"rmi:///austin.mightygumball.com/gumballmachine",
+                         "rmi:///boulder.mightygumball.com/gumballmachine"};
+    GumballMonitor[] monitor = new GumballMonitor[location.length];
+
+    for(int i = 0; i < location.length; i++){
+        try {
+            GumballMachineRemote machine = (GumballMachineRemote) Naming.lookup(location[i]);
+            monitor[i] = new GumballMonitor(machine);
+            System.out.println(monitor[i]);
+        } catch (NotBoundException e) {
+            throw new RuntimeException(e);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    for(int i = 0; i < location.length; i++){
+        monitor[i].report();
+    }
+}
+```
 
 ![img_1.png](src/images/img_1.png)
 
 ## Virtual Proxy
 The virtual proxy acts as a representative for an object that may be expensive to create. The proxy could show
 an image whilst is loading all the object under the cover.
+```
+public ImageProxy(URL url) {
+    imageURL = url;
+    imageLoaded = new ImageLoaded(this);
+    imageNotLoaded = new ImageNotLoaded(this);
+    imageState = imageNotLoaded;
+}
+
+public void setImageState(ImageState imageState) {
+    this.imageState = imageState;
+}
+```
 
 
 ![img_2.png](src/images/img_2.png)
 
 ## Protection Proxy
-It's a proxy that control access to an object based on access rights. 
+It's a proxy that control access to an object based on access rights.  
+```
+@Override
+public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+    try {
+        if (method.getName().startsWith("get")) {
+            return method.invoke(person, args);
+        } else if (method.getName().startsWith("setGeekRating")) {
+            throw new IllegalAccessException();
+        } else if (method.getName().startsWith("set")) {
+            return method.invoke(person, args);
+        }
+    }catch (InvocationTargetException e){
+        e.printStackTrace();
+    }
+    return null;
+}
+```
 
 ![img_3.png](src/images/img_3.png)
 
