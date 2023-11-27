@@ -75,7 +75,8 @@ public class MyRemoteClient {
 
 ## Virtual Proxy
 The virtual proxy acts as a representative for an object that may be expensive to create. The proxy could show
-an image whilst is loading all the object under the cover.
+an image whilst is loading all the object under the cover.  
+![img_2.png](src/images/img_2.png)
 ```
 public ImageProxy(URL url) {
     imageURL = url;
@@ -95,11 +96,9 @@ public void setImageIcon(ImageIcon imageIcon) {
 }
 ```
 
-
-![img_2.png](src/images/img_2.png)
-
 ## Protection Proxy
 It's a proxy that control access to an object based on access rights.  
+![img_3.png](src/images/img_3.png)
 ```
 public class OwnerInvocationHandler implements InvocationHandler {
     Person person;
@@ -145,8 +144,6 @@ private Person getOwnerProxy(Person person) {
     return (Person) Proxy.newProxyInstance(person.getClass().getClassLoader(), person.getClass().getInterfaces(), new OwnerInvocationHandler(person));
 }
 ```
-
-![img_3.png](src/images/img_3.png)
 
 
 Decorator - The decorator pattern adds behavior to an object, while Proxy controls access.
