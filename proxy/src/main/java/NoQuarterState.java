@@ -1,11 +1,9 @@
-package org.proxy;
-
 /**
  * Created by ainacio on Nov, 2023
  */
 public class NoQuarterState implements State{
-
-    GumballMachine gumballMachine;
+    private static final long serialVersionUID = 4L;
+    transient GumballMachine gumballMachine;
 
     public NoQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

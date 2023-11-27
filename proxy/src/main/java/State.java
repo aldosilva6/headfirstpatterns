@@ -1,9 +1,9 @@
-package org.proxy;
+import java.io.Serializable;
 
 /**
  * Created by ainacio on Nov, 2023
  */
-public interface State {
+public interface State extends Serializable {
 
     public void insertQuarter();
 

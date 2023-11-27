@@ -1,11 +1,10 @@
-package org.proxy;
-
 /**
  * Created by ainacio on Nov, 2023
  */
 public class SoldOutState implements State {
+    private static final long serialVersionUID = 2L;
 
-    GumballMachine gumballMachine;
+    transient GumballMachine gumballMachine;
 
     public SoldOutState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

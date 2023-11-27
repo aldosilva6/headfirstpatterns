@@ -1,11 +1,10 @@
-package org.proxy;
-
 /**
  * Created by ainacio on Nov, 2023
  */
 public class WinnerState implements State{
 
-    GumballMachine gumballMachine;
+    private static final long serialVersionUID = 6L;
+    transient GumballMachine gumballMachine;
 
     public WinnerState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

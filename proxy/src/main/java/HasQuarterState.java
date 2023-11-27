@@ -1,13 +1,13 @@
-package org.proxy;
-
 import java.util.Random;
 
 /**
  * Created by ainacio on Nov, 2023
  */
 public class HasQuarterState implements State{
+
+    private static final long serialVersionUID = 7L;
     Random randomWinner = new Random(System.currentTimeMillis());
-    GumballMachine gumballMachine;
+    transient GumballMachine gumballMachine;
 
     public HasQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
