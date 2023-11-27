@@ -101,24 +101,52 @@ public void setImageIcon(ImageIcon imageIcon) {
 ## Protection Proxy
 It's a proxy that control access to an object based on access rights.  
 ```
-@Override
-public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    try {
-        if (method.getName().startsWith("get")) {
-            return method.invoke(person, args);
-        } else if (method.getName().startsWith("setGeekRating")) {
-            throw new IllegalAccessException();
-        } else if (method.getName().startsWith("set")) {
-            return method.invoke(person, args);
-        }
-    }catch (InvocationTargetException e){
-        e.printStackTrace();
+public class OwnerInvocationHandler implements InvocationHandler {
+    Person person;
+
+    public OwnerInvocationHandler(Person person) {
+        this.person = person;
     }
-    return null;
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        try {
+            if (method.getName().startsWith("get")) {
+                return method.invoke(person, args);
+            } else if (method.getName().startsWith("setGeekRating")) {
+                throw new IllegalAccessException();
+            } else if (method.getName().startsWith("set")) {
+                return method.invoke(person, args);
+            }
+        }catch (InvocationTargetException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+}
+
+MatchMakingTestDrive.java
+
+private void drive() {
+    Person joe = getPersonFromDatabase("Joe Javabean");
+    Person ownerProxy = getOwnerProxy(joe);
+    System.out.println("Name is " + ownerProxy.getName());
+    ownerProxy.setInterests("bowling, Go");
+    System.out.println("Interests set from owner proxy");
+    try {
+        ownerProxy.setGeekRating(10);
+    } catch (Exception e) {
+        System.out.println("Can't set rating from owner proxy");
+    }
+    System.out.println("Rating is " + ownerProxy.getGeekRating());
+    ......
+
+private Person getOwnerProxy(Person person) {
+    return (Person) Proxy.newProxyInstance(person.getClass().getClassLoader(), person.getClass().getInterfaces(), new OwnerInvocationHandler(person));
 }
 ```
 
 ![img_3.png](src/images/img_3.png)
 
 
-Decorator - The decorator patter adds behavior to an object, while Proxy controls access.
+Decorator - The decorator pattern adds behavior to an object, while Proxy controls access.
