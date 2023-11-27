@@ -10,7 +10,6 @@ Proxy as a representative to another object.
 Subject = Provides the interface to the RealSubject and the Proxy.  
 The RealSubject = is the object that does the real work.  
 The Proxy = holds a reference to the real object.
-
 ![img.png](src/images/img.png)
 
 To execute the MyRemote example you first need to run:  
@@ -68,6 +67,12 @@ public ImageProxy(URL url) {
 
 public void setImageState(ImageState imageState) {
     this.imageState = imageState;
+}
+
+ImageNotLoaded.java
+public void setImageIcon(ImageIcon imageIcon) {
+    imageProxy.setImageState(imageProxy.getImageLoaded());
+    imageProxy.setImageIcon(imageIcon);
 }
 ```
 
