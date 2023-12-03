@@ -13,11 +13,3 @@ The view uses the composite pattern to implement the user interface, which usual
 
 # Adapter
 Use an adapter to adapt a model to work with existing controller and views.
-
-Problem: How do I get to work on time?
-
-Context: I've locked my keys in the car.
-
-Solution: Break the window, get in the car, start the engine, and drive to work.
-
-No. You are going to break a window. Yes, this is a workaround.
