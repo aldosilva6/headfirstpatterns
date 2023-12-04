@@ -22,9 +22,9 @@ Decorator - wraps an object provide a new behavior.
 
 Adapter - wraps an object and provides a different interface to it.
 
-Factory Method - subclasses decide how to implement steps in an algorithm
+Template Method - subclasses decide how to implement steps in an algorithm
 
-Template method - Subclases decide which concrete classes to create.
+Factory method - Subclases decide which concrete classes to create.
 
 Singleton - Ensures one and only one object is created.
 
@@ -45,6 +45,14 @@ Observer - Allows objects to be notified when state changes.
 Proxy - Wraps an object to control access to it.
 
 Command - Encapsulates a request as an object.
+
+Builder - To encapsulate the construction of a product and allow it to be constructed in steps.
+
+Chain of Responsability - When you want to give more than one object a chance to handle a request.
+
+Mediator - To centralize complex communications and control between related objects.
+
+Prototype - When creating an instance of a given class is either expensive or complicated.
 
 **Creational**
 Factory Method - Abstract Factory - Singleton
