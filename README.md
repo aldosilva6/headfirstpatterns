@@ -1,5 +1,8 @@
 # headfirstpatterns
 
+### Thinking in patterns
+Center your thinking on design, not on patterns. Use patterns when there is a natural neeed for them. If something simpler will work, then use it.
+
 **Problem**: How do I get to work on time?
 
 **Context**: I've locked my keys in the car.
