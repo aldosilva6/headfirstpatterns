@@ -3,6 +3,13 @@
 ### Thinking in patterns
 Center your thinking on design, not on patterns. Use patterns when there is a natural neeed for them. If something simpler will work, then use it.
 
+Introduce a pattern when you are sure it's necessary to solve a problem in your design, or when you are quite sure that it is needed to deal with a future
+change in the requirements of your application.
+
+**WARNING**
+Overuse of design patterns can lead to code that is downright overengineered. Always go with the simplest solution that does the job and introduce patterns where
+the need emerges.
+
 **Problem**: How do I get to work on time?
 
 **Context**: I've locked my keys in the car.
