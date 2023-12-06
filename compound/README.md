@@ -16,3 +16,12 @@ Quackables into Flocks. Also allows the Quackologists to create subFolks to mana
 # Observer Pattern
 The Quackologists also wanted to be notified when any Quackable quacked. So we used `Observer Pattern` to let Quackologists register
 as Quackable Observers. Now they're notified every time any Quackable quacks.
+
+# MVC Pattern
+Model View Controller - it's just a few patterns put together.  
+![img.png](img.png)
+
+The `Model` uses Observer to keep views and controller updated on the latest state changes.  
+The `View` and the `Controller`, on the other hand, implement the Strategy Pattern. The `Controller` is the strategy of the view,
+and it can be easily exchanged with another controller if want different behavior.
+The `View` itself also uses a pattern internally to manage the windows, buttons, and other components of the display: The Composite Pattern.
